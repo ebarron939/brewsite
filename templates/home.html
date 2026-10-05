@@ -1,2 +1,23 @@
 {% extends "base.html" %}
-{% block content %}<h1>Welcome to BrewSite</h1><p>Explore the New Mexico brewery directory.</p><a class="button" href="{{ url_for('brewery') }}">View breweries</a>{% endblock %}
+{% block content %}
+<section class="intro">
+  <p class="eyebrow">Explore New Mexico</p>
+  <h1>Welcome to BrewSite</h1>
+  <p>BrewSite brings brewery information together in one place. Browse names,
+  locations, brewery types, and websites on the Breweries page.</p>
+  <p>For my home-page addition, I included three illustrations of brewing
+  ingredients, brewery equipment, and a tasting flight.</p>
+  <a class="button" href="{{ url_for('brewery') }}">View breweries</a>
+</section>
+<section class="gallery" aria-label="Three images about brewing">
+  <figure><img src="{{ url_for('static', filename='images/ingredients.svg') }}"
+  alt="Illustration of barley and hop leaves" width="600" height="360">
+  <figcaption>Ingredients — barley and hops contribute flavor.</figcaption></figure>
+  <figure><img src="{{ url_for('static', filename='images/brewery.svg') }}"
+  alt="Illustration of brewery tanks" width="600" height="360">
+  <figcaption>Brewing — equipment supports the brewing process.</figcaption></figure>
+  <figure><img src="{{ url_for('static', filename='images/flight.svg') }}"
+  alt="Illustration of three glasses in a tasting flight" width="600" height="360">
+  <figcaption>Variety — breweries produce different styles.</figcaption></figure>
+</section>
+{% endblock %}
